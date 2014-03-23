@@ -4,7 +4,7 @@ version: 1.5B
 description: A lightweight and powerful plugin to help with playing The Hunger Games!
 softdepend: [Vault, WorldEdit]
 commands:
-  Ha:
+  MW:
     description: Makes you join a game or start the game!
   StartPoint:
     description: Sets the starting point of a tribute.
