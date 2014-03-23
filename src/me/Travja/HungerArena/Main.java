@@ -169,7 +169,7 @@ public class Main extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(Boundaries, this);
 		getServer().getPluginManager().registerEvents(spawnsListener, this);
 
-		getCommand("Ha").setExecutor(HaCommands);
+		getCommand("MW").setExecutor(HaCommands);
 		getCommand("Sponsor").setExecutor(SponsorCommands);
 		getCommand("Startpoint").setExecutor(SpawnsCommand);
 
@@ -193,7 +193,7 @@ public class Main extends JavaPlugin{
 								Integer s = Integer.parseInt(e.getKey());
 								if(location.get(a)== null)
 									location.put(a, new HashMap<Integer, Location>());
-								log.info("Added spawn number " + s + " in arena " + a + "!");
+								log.info("Added spawn number " + s + " in game " + a + "!");
 								location.get(a).put(s, new Location(getServer().getWorld(coords[0]), Double.parseDouble(coords[1]), Double.parseDouble(coords[2]), Double.parseDouble(coords[3])));
 							}
 						}
@@ -204,7 +204,7 @@ public class Main extends JavaPlugin{
 
 		for(i = 1; i <= location.size(); i++){
 			if(location.get(i)!= null){
-				log.info("Loaded " + location.get(i).size() + " tribute spawns for arena " + i + "!");
+				log.info("Loaded " + location.get(i).size() + " mer  spawns for game " + i + "!");
 				Playing.put(i, new ArrayList<String>());
 				Ready.put(i, new ArrayList<String>());
 				Dead.put(i, new ArrayList<String>());
@@ -223,7 +223,7 @@ public class Main extends JavaPlugin{
 				}else if(location.size()> config.getInt("maxPlayers")){
 					maxPlayers.put(i, config.getInt("maxPlayers"));
 				}
-				log.info("Max players is for arena " + i + " is " + maxPlayers.get(i));
+				log.info("Max players is for game " + i + " is " + maxPlayers.get(i));
 				open.put(i, true);
 			}
 		}
