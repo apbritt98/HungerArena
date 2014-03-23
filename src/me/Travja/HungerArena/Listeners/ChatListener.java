@@ -21,7 +21,7 @@ public class ChatListener implements Listener {
 		Player p = event.getPlayer();
 		String pname = p.getName();
 		if(plugin.getArena(p)!= null){
-			String msg = "<" + ChatColor.RED + "[Tribute] " + ChatColor.WHITE + pname + ">" + " " + event.getMessage();
+			String msg = "<" + ChatColor.RED + "[Merc] " + ChatColor.WHITE + pname + " " + event.getMessage();
 			if(plugin.config.getString("ChatClose").equalsIgnoreCase("True")){
 				double radius = plugin.config.getDouble("ChatClose_Radius");
 				List<Entity> near = p.getNearbyEntities(radius, radius, radius);
@@ -34,12 +34,12 @@ public class ChatListener implements Listener {
 					}
 				}else if(near.size()== 0){
 					p.sendMessage(msg);
-					p.sendMessage(ChatColor.YELLOW + "No one near!");
+					p.sendMessage(ChatColor.YELLOW + "No one can hear you!");
 				}else if(!(near.size()== 0)){
 					for(Entity en:near){
 						if(!(en instanceof Player)){
 							p.sendMessage(msg);
-							p.sendMessage(ChatColor.YELLOW + "No one near!");
+							p.sendMessage(ChatColor.YELLOW + "No one can here you!");
 						}
 					}
 				}
