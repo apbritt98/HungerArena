@@ -57,7 +57,7 @@ public class WorldChange implements Listener {
 						p.getInventory().setContents(parmor);
 						p.updateInventory();
 					}
-					p.sendMessage(ChatColor.GOLD + "[HA] " + ChatColor.GREEN + "Your inventory has been restored!");
+					p.sendMessage(ChatColor.GOLD + "[MercWars] " + ChatColor.GREEN + "Your inventory has been restored!");
 					new File(plugin.getDataFolder(), pname + ".yml").delete();
 					plugin.needInv.remove(pname);
 				}catch(Exception e){
